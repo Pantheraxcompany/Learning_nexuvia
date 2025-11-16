@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexuvia Academy – Nexies Learning Hub</title>
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- CSS EKSTERNAL -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="top-bar">#NexiesLearningHub</div>
+
+  <!-- LOGIN PAGE -->
+  <div id="login-page" class="page">
+    <div class="center-wrapper">
+      <div class="login-card">
+        <div class="login-subtitle">✨ Nexies Learning Hub – Nexuvia Academy ✨</div>
+        <div class="login-title">Portal Belajar All-in-One Kamu</div>
+        <div class="login-tagline">Belajar di Nexuvia Academy bersama meraih impian</div>
+
+        <form id="login-form">
+          <div class="field">
+            <div class="form-label">Username Nexies</div>
+            <input type="text" id="username" class="input" placeholder="masukan username anda disini" required />
+          </div>
+          <div class="field">
+            <div class="form-label">Password</div>
+            <input type="password" id="password" class="input" placeholder="masukan password anda disini" required />
+          </div>
+          <button type="submit" class="btn-primary">Masuk</button>
+          <div class="error-text" id="login-error"></div>
+        </form>
+
+        <div class="default-info">
+          Default password semua akun: <strong>nexuviaacademy</strong>.
+        </div>
+      </div>
+
+      <div class="footer">© Nexuvia Academy 2025</div>
+    </div>
+  </div>
+
+  <!-- MAIN APP -->
+  <div id="app" class="hidden">
+    <header class="nav-bar">
+      <div class="nav-top">
+        <div class="nav-logo">Nexuvia Academy</div>
+        <div class="brand-badge">#NexiesLearningHub</div>
+      </div>
+      <div class="nav-tabs">
+        <div class="nav-tab active" data-target="dashboard">Dasbor</div>
+        <div class="nav-tab" data-target="materi-section">Materi</div>
+      </div>
+    </header>
+
+    <main class="content">
+      <!-- DASHBOARD -->
+      <section id="dashboard">
+        <div class="card">
+          <div class="dash-header">
+            <div>
+              <div class="dash-greeting-title" id="greeting">Halo, Nexies 👋</div>
+              <div class="dash-program">Program: <strong>FYP</strong></div>
+
+              <div class="progress-row">
+                <div class="progress-tag">
+                  <span id="completed-count">0</span>/<span id="total-count">0</span> selesai
+                </div>
+                <div class="progress-percent" id="percent-label">0%</div>
+                <button id="logout-btn" class="btn-logout">Keluar</button>
+              </div>
+
+              <div class="progress-bar-wrap">
+                <div class="progress-bar-fill" id="progress-bar"></div>
+              </div>
+
+              <div class="dash-countdowns">
+                <div class="exam-card exam-tka">
+                  <div class="exam-title">TKA</div>
+                  <div class="exam-count" id="tka-count">H-0</div>
+                  <div class="exam-date" id="tka-date">25 Mar 2026</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- QUICK ACCESS -->
+        <div class="card">
+          <div class="section-title">🚀 Quick Access</div>
+          <div class="quick-grid">
+            <div class="quick-card" data-jump="materi-section">
+              Materi Kelas Terbaru
+              <small>Latihan Matematika Nexies</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MATERI -->
+      <section id="materi-section" class="hidden">
+        <div class="card">
+          <div class="section-title">📚 Materi Matematika</div>
+          <div class="filters">
+            <div class="filter-row">
+              <select id="category-filter" class="select">
+                <option value="MTK">Matematika</option>
+              </select>
+              <select id="code-filter" class="select">
+                <option value="all">Semua Kode</option>
+                <option value="FM">[FM]</option>
+                <option value="BS">[BS]</option>
+              </select>
+            </div>
+            <div class="filter-row">
+              <input id="search-input" class="search-input" placeholder="Cari materi matematika..." />
+              <button id="open-playlist-btn" class="btn-secondary">Buka Playlist</button>
+            </div>
+            <div class="checkbox-row">
+              <input type="checkbox" id="hide-finished" />
+              <label for="hide-finished">Sembunyikan selesai</label>
+            </div>
+          </div>
+
+          <div class="material-list-header">Daftar Materi</div>
+          <div id="material-list"></div>
+          <div class="pagination" id="pagination"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JS EKSTERNAL -->
+  <script src="app.js"></script>
+</body>
+</html>
